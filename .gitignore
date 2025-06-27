@@ -15,7 +15,7 @@ wheels/
 # Configuration files
 config/c*
 
-/core/token.*
+/src/tools/token.*
 
 
 

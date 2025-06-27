@@ -28,7 +28,7 @@ def get_gmail_service():
             creds.refresh_token(Request())
         else:
             # Path to your credentials.json file
-            credentials_path = os.path.join(os.path.dirname(__file__), '..', 'config', 'credentials.json')
+            credentials_path = os.path.join(os.path.dirname(__file__), '..', '../config', 'credentials.json')
             flow = InstalledAppFlow.from_client_secrets_file(
                 credentials_path, SCOPES)
             creds = flow.run_local_server(port=0)
