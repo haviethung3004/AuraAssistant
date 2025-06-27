@@ -8,3 +8,16 @@ wheels/
 
 # Virtual environments
 .venv
+
+
+.env
+
+# Configuration files
+config/c*
+
+/core/token.*
+
+
+
+
+
