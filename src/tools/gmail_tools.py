@@ -39,7 +39,7 @@ def get_gmail_service():
     service = build('gmail', 'v1', credentials=creds)
     return service
 
-
+@tool
 def list_latest_gmail_messages(count: int = 5) -> str:
     """
     Lists the latest unread Gmail messages from the user's inbox.
@@ -69,7 +69,7 @@ def list_latest_gmail_messages(count: int = 5) -> str:
     except Exception as e:
         return f"Error retrieving Gmail messages: {e}"
 
-
+@tool
 def list_latest_messages_id(count: int = 5) -> str:
     """
     Lists the IDs of the latest unread Gmail messages from the user's inbox.
@@ -93,7 +93,8 @@ def list_latest_messages_id(count: int = 5) -> str:
         return output
     except Exception as e:
         return f"Error retrieving Gmail message IDs: {e}"
-
+    
+@tool
 def get_gmail_message_content(message_id: str) -> str:
     """
     Retrieves the content of a specific Gmail message by its ID.
@@ -134,7 +135,7 @@ def get_gmail_message_content(message_id: str) -> str:
     except Exception as e:
         return f"Error retrieving message content for ID {message_id}: {e}"
 
-
+@tool
 def send_gmail_message(to: str, subject: str, body: str, reply_to_id: str | None = None) -> str:
     """
     Sends a Gmail message to a recipient.
@@ -177,9 +178,10 @@ def send_gmail_message(to: str, subject: str, body: str, reply_to_id: str | None
 
 if __name__ == "__main__":
     # Example usage
-    print(list_latest_gmail_messages(2))
+    # print(list_latest_gmail_messages(2))
     # Replace 'your_message_id_here' with an actual message ID to test get_gmail_message_content
     # print(get_gmail_message_content('your_message_id_here'))
     
     # List latest message IDs
-    print(list_latest_messages_id(2))
+    # print(list_latest_messages_id(2))
+    pass
